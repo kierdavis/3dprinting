@@ -43,4 +43,5 @@ in pkgs.stdenv.mkDerivation {
   in major*100 + minor;
   HARDWARE_MOTHERBOARD = 7;  # BOARD_ULTIMAKER from Marlin/boards.h.
   U8GLIB = 0;
+  # V = 1;  # show gcc commands during build
 }
