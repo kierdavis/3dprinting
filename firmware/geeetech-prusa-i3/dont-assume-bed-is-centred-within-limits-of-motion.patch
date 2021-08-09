@@ -1,0 +1,36 @@
+diff --git a/Marlin/Conditionals_post.h b/Marlin/Conditionals_post.h
+index 42f4733..c0de81d 100644
+--- a/Marlin/Conditionals_post.h
++++ b/Marlin/Conditionals_post.h
+@@ -53,20 +53,20 @@
+ #endif
+ 
+ // Define center values for future use
+-#if ENABLED(BED_CENTER_AT_0_0)
+-  #define X_CENTER 0
+-  #define Y_CENTER 0
+-#else
+-  #define X_CENTER ((X_BED_SIZE) / 2)
+-  #define Y_CENTER ((Y_BED_SIZE) / 2)
+-#endif
++//[Configuration.h] #if ENABLED(BED_CENTER_AT_0_0)
++//[Configuration.h]   #define X_CENTER 0
++//[Configuration.h]   #define Y_CENTER 0
++//[Configuration.h] #else
++//[Configuration.h]   #define X_CENTER ((X_BED_SIZE) / 2)
++//[Configuration.h]   #define Y_CENTER ((Y_BED_SIZE) / 2)
++//[Configuration.h] #endif
+ #define Z_CENTER ((Z_MIN_POS + Z_MAX_POS) / 2)
+ 
+ // Get the linear boundaries of the bed
+-#define X_MIN_BED (X_CENTER - (X_BED_SIZE) / 2)
+-#define X_MAX_BED (X_CENTER + (X_BED_SIZE) / 2)
+-#define Y_MIN_BED (Y_CENTER - (Y_BED_SIZE) / 2)
+-#define Y_MAX_BED (Y_CENTER + (Y_BED_SIZE) / 2)
++//[Configuration.h] #define X_MIN_BED (X_CENTER - (X_BED_SIZE) / 2)
++//[Configuration.h] #define X_MAX_BED (X_CENTER + (X_BED_SIZE) / 2)
++//[Configuration.h] #define Y_MIN_BED (Y_CENTER - (Y_BED_SIZE) / 2)
++//[Configuration.h] #define Y_MAX_BED (Y_CENTER + (Y_BED_SIZE) / 2)
+ 
+ /**
+  * Dual X Carriage

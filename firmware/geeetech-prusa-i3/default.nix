@@ -8,7 +8,10 @@ in pkgs.stdenv.mkDerivation {
     rev = "1.1.9.1";
     hash = "sha256:1l7d05v5ck79z1rkv09qfdf8gpjirzpcdlvyfd3rncd02gzaw5mq";
   };
-  phases = ["unpackPhase" "configurePhase" "buildPhase" "installPhase"];
+  patches = [
+    ./dont-assume-bed-is-centred-within-limits-of-motion.patch
+  ];
+  phases = ["unpackPhase" "patchPhase" "configurePhase" "buildPhase" "installPhase"];
   configurePhase = ''
     export ARDUINO_USER_DIR=$NIX_BUILD_TOP/Arduino
     install -m 0644 ${./Configuration.h} Marlin/Configuration.h
