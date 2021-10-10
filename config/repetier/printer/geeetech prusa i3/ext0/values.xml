@@ -14,5 +14,5 @@ type="string"/>
 <value name="extruderId"
 type="int">0</value>
 <value name="name"
-type="string">E</value>
+type="string">Extruder E</value>
 </values>
