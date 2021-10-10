@@ -1,0 +1,18 @@
+<values>
+<value name="tempOffset"
+type="string">0</value>
+<value name="color"
+type="int">-16776961</value>
+<value name="offsetY"
+type="string">0</value>
+<value name="diameter"
+type="string">0.4</value>
+<value name="offsetX"
+type="string">0</value>
+<value name="script"
+type="string"/>
+<value name="extruderId"
+type="int">0</value>
+<value name="name"
+type="string">E</value>
+</values>
