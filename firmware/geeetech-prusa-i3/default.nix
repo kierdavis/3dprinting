@@ -18,13 +18,13 @@ in pkgs.stdenv.mkDerivation {
   '';
   buildPhase = ''
     make -C Marlin -j ''${NIX_BUILD_CORES:-1}
-    cat >flash <<EOF
+    cat >upload <<EOF
     #!${pkgs.stdenv.shell}
     exec "$AVR_TOOLS_PATH"avrdude \
       -D \
       -C$ARDUINO_INSTALL_DIR/hardware/tools/avr/etc/avrdude.conf \
       -pATmega2560 \
-      -P''${1:-/dev/ttyUSB0} \
+      -P''${1:-/dev/geeetech-prusa-i3} \
       -cwiring \
       -b115200 \
       -Uflash:w:$out/Marlin.hex:i
@@ -32,7 +32,7 @@ in pkgs.stdenv.mkDerivation {
   '';
   installPhase = ''
     install -D -m 0644 Marlin/applet/Marlin.{elf,hex} -t $out
-    install -D -m 0755 flash -t $out
+    install -D -m 0755 upload -t $out/bin
   '';
   ARDUINO_INSTALL_DIR = "${pkgs.arduino-core}/share/arduino";
   AVR_TOOLS_PATH = "${pkgs.arduino-core}/share/arduino/hardware/tools/avr/bin/";  # trailing slash required
