@@ -608,6 +608,15 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
+/*
+ * X & Y:
+ *   2 mm/tooth, as per eyeballing a section of belt
+ *   20 teeth/rev, as per BOM sheet and eyeballing
+ *   1.8 degrees/step, as per 42HS3418-24B15 motor datasheet
+ *   16 microsteps/step, as per jumpers on motherboard
+ *
+ *   16 microsteps/step * 1/1.8 steps/degree * 360 degrees/rev * 1/20 revs/tooth * 1/2 teeth/mm = 80 steps/mm
+ */
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 2560, 93 }
 
 /**
