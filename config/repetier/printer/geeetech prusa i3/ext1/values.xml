@@ -2,11 +2,11 @@
 <value name="tempOffset"
 type="string">0</value>
 <value name="color"
-type="int">-65536</value>
-<value name="diameter"
-type="string">0.4</value>
+type="int">-256</value>
 <value name="offsetY"
 type="string">0</value>
+<value name="diameter"
+type="string">0.4</value>
 <value name="offsetX"
 type="string">0</value>
 <value name="script"
